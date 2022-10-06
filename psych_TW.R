@@ -11,7 +11,7 @@ r1$rho
 r2 <- mixedCor(bfi, p=NULL, c=NULL, d=NULL)
 r2$rho
 
-# Mucking around with switch()
+  # Mucking around with switch()
 funct <- function(a, b=NULL, c=NULL){
   d <- "I haven't been changed yet"
   switch (a,
