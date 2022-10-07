@@ -1,17 +1,23 @@
 # Development
 library(devtools)
 use_r("fa.r")
+load_all()
+fac(bfi, nfactors = 2, fm = "pa", rotate = "oblimin", cor = "mixed")
+
+use_r("R/mixed.cor.R")
 
 # Mucking around with mixedCor
 library(psych)
 
 data(bfi)
-r1 <- mixedCor(bfi, p=1:5, c=28, d=26)
-r1$rho
-r2 <- mixedCor(bfi, p=NULL, c=NULL, d=NULL)
-r2$rho
 
-  # Mucking around with switch()
+  # Testing whether identifying variable types changes the correlations
+  r1_id <- mixedCor(bfi, p=1:5, c=28, d=26)
+  r1_id$rho
+  r1_blank <- mixedCor(bfi, ncat = 4)
+  r1_blank$rho
+
+# Mucking around with switch()
 funct <- function(a, b=NULL, c=NULL){
   d <- "I haven't been changed yet"
   switch (a,
