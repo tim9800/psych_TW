@@ -21,7 +21,8 @@ fac(r,nfactors=1,n.obs = NA, rotate="oblimin", scores="tenBerge", residuals=FALS
  SMC=TRUE, covar=FALSE,missing=FALSE,impute="median",min.err = 0.001, 
 max.iter=50,symmetric=TRUE,warnings=TRUE,fm="minres",alpha=.1,
 oblique.scores=FALSE,np.obs=NULL,use="pairwise",cor="cor",correct=.5, 
-weight=NULL,n.rotations=1,hyper=.15,smooth=TRUE,...)
+weight=NULL,n.rotations=1,hyper=.15,smooth=TRUE,
+cont=NULL, poly=NULL, dich=NULL,...)
 
 fa.pooled(datasets,nfactors=1,rotate="oblimin",scores="regression", 
 residuals=FALSE,SMC=TRUE,covar=FALSE,missing=FALSE,impute="median", min.err = .001
