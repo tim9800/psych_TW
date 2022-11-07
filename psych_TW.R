@@ -1,10 +1,13 @@
-# Development
-library(devtools)
+# Open files
 use_r("fa.r")
-load_all()
-fac(bfi, nfactors = 2, fm = "pa", rotate = "oblimin", cor = "mixed")
 
-use_r("R/mixed.cor.R")
+load_all()
+
+
+
+
+# Function testing zone
+fac(bfi, nfactors = 2, fm = "pa", rotate = "oblimin", cor = "mixed")
 
 # Mucking around with mixedCor
 library(psych)
