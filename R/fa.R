@@ -26,7 +26,8 @@ function(r,nfactors=1,n.obs = NA,n.iter=1,rotate="oblimin",scores="regression", 
                         #in case we are using partial.r of class psych and partial.r   added 4/10/21  
                                  }
   
- f <- fac(r=r,nfactors=nfactors,n.obs=n.obs,rotate=rotate,scores=scores,residuals=residuals,SMC = SMC, covar=covar, missing=missing, impute=impute, min.err=min.err, max.iter=max.iter, symmetric=symmetric, warnings=warnings, fm=fm, alpha=alpha, oblique.scores=oblique.scores, np.obs=np.obs,use=use, cor=cor, correct=correct, weight=weight, n.rotations=n.rotations, hyper=hyper,smooth=smooth, ...=...) #call fa with the appropriate parameters
+ f <- fac(r=r,nfactors=nfactors,n.obs=n.obs,rotate=rotate,scores=scores,residuals=residuals,SMC = SMC, covar=covar, missing=missing, impute=impute, min.err=min.err, max.iter=max.iter, symmetric=symmetric, warnings=warnings, fm=fm, alpha=alpha, oblique.scores=oblique.scores, np.obs=np.obs,use=use, cor=cor, correct=correct, weight=weight, n.rotations=n.rotations, hyper=hyper,smooth=smooth,
+          cont=cont, poly=poly, dich=dich, ...=...) #call fa with the appropriate parameters
  
  fl <- f$loadings  #this is the original
  
@@ -117,7 +118,9 @@ use="pairwise",cor="cor",
 correct=.5,weight=NULL,
 n.rotations=1,
 hyper=.15,
-smooth=TRUE, ...) {
+smooth=TRUE,
+cont=NULL, poly=NULL, dich=NULL,
+...) {
  cl <- match.call()
  control <- NULL   #if you want all the options of mle, then use factanal
  
