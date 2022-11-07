@@ -19,7 +19,7 @@
 
 "fa" <- 
 function(r,nfactors=1,n.obs = NA,n.iter=1,rotate="oblimin",scores="regression", residuals=FALSE,SMC=TRUE,covar=FALSE,missing=FALSE,impute="none", min.err = .001,max.iter=50,symmetric=TRUE,warnings=TRUE,fm="minres",alpha=.1, p =.05,oblique.scores=FALSE,np.obs=NULL,use="pairwise",cor="cor",correct=.5,weight=NULL,n.rotations=1,hyper=.15,smooth=TRUE,
-         c=NULL, p=NULL, d=NULL, ...) {
+         cont=NULL, poly=NULL, dich=NULL, ...) {
  cl <- match.call()
   if(isCorrelation(r)) {if(is.na(n.obs) && (n.iter >1)) stop("You must specify the number of subjects if giving a correlation matrix and doing confidence intervals")
                         if(length(class(r)) > 1)  { if( inherits(r,"partial.r")) class(r) <- c("matrix","array") }
@@ -416,7 +416,7 @@ FA.OLS <- function(Psi,S,nf) {
        poly = {r <- polychoric(r,correct=correct,weight=weight)$rho},
        tetrachoric = {r <- tetrachoric(r,correct=correct,weight=weight)$rho},
        polychoric = {r <- polychoric(r,correct=correct,weight=weight)$rho},
-       mixed = {r <- mixedCor(r,c=c,p=p,d=d,use=use,correct=correct)$rho}, # c,p,d args added to handle mixed data, 7/11/22
+       mixed = {r <- mixedCor(r,c=cont,p=poly,d=dich,use=use,correct=correct)$rho}, # c,p,d args added to handle mixed data, 7/11/22
        Yuleb = {r <- YuleCor(r,,bonett=TRUE)$rho},
        YuleQ = {r <- YuleCor(r,1)$rho},
        YuleY = {r <- YuleCor(r,.5)$rho } 
