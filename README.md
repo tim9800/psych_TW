@@ -11,4 +11,4 @@ To calculate the correlation matrix, fac calls [`mixedCor`](https://www.rdocumen
 
 However, `fac` (and by extension, functions which call `fac`) does not provide this functionality.
 
-This package makes small tweaks to `fac` and `fa.pooled` (a function which relies on `fac`) to address this issue.
+This package makes small tweaks to `fac`, as well as `fa` and `fa.pooled` (functions which call `fac`) to address this issue.
