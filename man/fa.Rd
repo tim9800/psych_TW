@@ -71,9 +71,9 @@ frac=.1,...)
 \item{frac}{The fraction of data to sample n.iter times if showing stability across sample sizes}
 \item{datasets}{A list of replication data sets to analyse in fa.pooled. All need to have the same number of variables.}
 \item{smooth}{By default, improper correlations matrices are smoothed.  This is not necessary for factor extraction using fm="pa" or fm="minres", but is needed to give some of the goodness of fit tests. (see notes)}
-\item{cont}{If \code{cor="mixed"}, the column numbers of continuous variables. Optional, defaults to \code{NULL}}
-\item{poly}{If \code{cor="mixed"}, the column numbers of polytomous variables. Optional, defaults to \code{NULL}}
-\item{dich}{If \code{cor="mixed"}, the column numbers of dichotomous variables. Optional, defaults to \code{NULL}}
+\item{cont}{If \code{cor="mixed"} and \code{r} is raw data, the column numbers of continuous variables. Optional, defaults to \code{NULL}}. Note: if specifying column numbers using cont, poly or dich, ensure that the column numbers encompass the entire dataset. In other words, the dataset must only contain the variables referenced by the column numbers - unreferenced variables cannot be present.
+\item{poly}{If \code{cor="mixed"} and \code{r} is raw data, the column numbers of polytomous variables. Optional, defaults to \code{NULL}}
+\item{dich}{If \code{cor="mixed"} and \code{r} is raw data, the column numbers of dichotomous variables. Optional, defaults to \code{NULL}}
 \item{...}{additional parameters, specifically, keys may be passed if using the target rotation, or delta if using geominQ, or whether to normalize if using Varimax}
   
  } 
