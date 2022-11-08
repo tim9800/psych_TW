@@ -49,7 +49,7 @@ replicateslist <- parallel::mclapply(1:n.iter,function(x) {
                                       X <- matrix(rnorm(nvar * n.obs),n.obs)
                                       X <-  t(eX$vectors %*% diag(sqrt(pmax(eX$values, 0)), nvar) %*%  t(X))
                             } else {X <- r[sample(n.obs,n.obs,replace=TRUE),]}
-  fs <- fac(X,nfactors=nfactors,rotate=rotate,scores="none",SMC = SMC,missing=missing,impute=impute,min.err=min.err,max.iter=max.iter,symmetric=symmetric,warnings=warnings,fm=fm,alpha=alpha,oblique.scores=oblique.scores,np.obs=np.obs,use=use,cor=cor,correct=correct,n.rotations=n.rotations,hyper=hyper,smooth=smooth, ...=...) #call fa with the appropriate parameters
+  fs <- fac(X,nfactors=nfactors,rotate=rotate,scores="none",SMC = SMC,missing=missing,impute=impute,min.err=min.err,max.iter=max.iter,symmetric=symmetric,warnings=warnings,fm=fm,alpha=alpha,oblique.scores=oblique.scores,np.obs=np.obs,use=use,cor=cor,correct=correct,n.rotations=n.rotations,hyper=hyper,smooth=smooth, cont=cont,poly=poly,dich=dich,...=...) #call fa with the appropriate parameters
   if(nfactors == 1) {replicates <- list(loadings=fs$loadings)} else  {
                     t.rot <- target.rot(fs$loadings,fl)
                 

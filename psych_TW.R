@@ -1,10 +1,10 @@
 # Open files
 use_r("fa.r")
-
 load_all()
 
-
-
+devtools::install(pkg = "M:/CRU/Youth/Tim W/psych_TW/",
+                  dependencies = T,
+                  build_vignettes = F)
 
 # Function testing zone
 fac(bfi, nfactors = 2, fm = "pa", rotate = "oblimin", cor = "mixed")
